@@ -25,19 +25,19 @@ put stuff from my laptop to the internet :)
 
 ## Building blocks
 
-Code
+Our Code
 
-Infrastructure
+Other people's software
 
-all that sits inbetween (glue, automation)
+Automation
 
 ## Code
 
-SCM (read: git)
+SCM
 
 A build pipeline -> artifact
 
-## Infrastructure
+## Other people's software
 
 HTTP server / proxy
 
@@ -53,15 +53,30 @@ Queue system
 
 short answer: yes
 
+Plus monitoring :)
+
 ## Options: from more painful to more lame
 
 Bare metal (Github)
 
 Public Cloud (Netflix)
 
-PAAS (SAAS)
+PAAS <- sweet spot for most people?
 
-90s LAMP stack (Wordpress blogs)
+90s LAMP stack (hi PHP hosting!)
+
+## automation
+
+provisioning
+
+deployment
+
+## in other words
+
+DevOps Borat
+~~~
+To make error is human. To propagate error to all server in automatic way is #devops
+~~~
 
 ## mythical figures
 
@@ -73,18 +88,19 @@ devops
 
 ## uwsgi.it
 
-- free software PAAS
+- free software PAAS (MIT)
 - C + perl + nginx + django + postgres
 - linux containers based
-- rest API
+- REST API
 - based on uwsgi
+
+https://github.com/unbit/uwsgi.it
 
 ## Features
 
 - [Choose your own distribution for rootfs](https://github.com/unbit/uwsgi.it/blob/master/CustomDistros.md)
 - [SSL is not a costly update](https://github.com/unbit/uwsgi.it/blob/master/CustomerQuickstart.md#httpssni) (hey heroku)
 - [Clustering out of the box](https://github.com/unbit/uwsgi.it/blob/master/CustomerQuickstart.md#clustering)
-- Container partitioning aka [Loopboxes](https://github.com/unbit/uwsgi.it/blob/master/CustomerQuickstart.md#loopboxes)
 - Third party [alarms](https://github.com/unbit/uwsgi.it/blob/master/CustomerQuickstart.md#alarms) included
 
 
@@ -97,9 +113,12 @@ devops
 
 ## uwsgi
 
-An application server container
+An application server container (GPL)
 
 A way to run and manage python, ruby, lua, mono, jvm and even php apps
+
+https://github.com/unbit/uwsgi
+https://github.com/unbit/uwsgi-docs
 
 ## uwsgi
 
@@ -206,7 +225,7 @@ fastrouter-subscription-server = 127.0.0.1:4040
 logto = %d/fastrouter.log
 ```
 
-## workers
+## workers: python
 
 ``` ini
 [uwsgi]
@@ -219,11 +238,33 @@ processes = 1
 logto = %d/one.log
 ```
 
+## workers: ruby
+
+``` ini
+[uwsgi]
+plugins = rack
+master = true
+socket = 127.0.0.1:3042
+subscribe-to = 127.0.0.1:4040:127.0.0.1:8080
+rack = %d/../app.ru
+; required by rack specification
+post-buffering = 4096
+processes = 1
+logto = %d/two.log
+```
+
+
 ## redis
 
 ``` ini
 [uwsgi]
 smart-attach-daemon = %d/redis.pid redis-server --unixsocket %d/redis.socket --port 0 --pidfile %d/redis.pid --daemonize yes
+```
+
+## Let's run it
+
+```
+$ uwsgi emperor.ini
 ```
 
 # Demo time!
@@ -246,4 +287,4 @@ https://github.com/xrmx
 
 Easiest way to start hacking on free software
 
-[@tohacknight](https://twitter.com/rmistaken) - http://torino.hacknight.it
+[@tohacknight](https://twitter.com/tohacknight) - [http://torino.hacknight.it](http://torino.hacknight.it)
