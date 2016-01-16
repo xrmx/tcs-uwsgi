@@ -17,11 +17,10 @@ deploy
 to organize and send out (people or things) to be used for a particular purpose
 ~~~
 
-## a web app
+## aka
 
-~~~
-put stuff from my laptop to the internet :)
-~~~
+put stuff from my laptop to the Internet :)
+
 
 ## Building blocks
 
@@ -115,7 +114,7 @@ https://github.com/unbit/uwsgi.it
 
 An application server container (GPL)
 
-A way to run and manage python, ruby, lua, mono, jvm and even php apps
+A way to run and manage python, ruby, lua, mono, jvm, js and even php apps
 
 https://github.com/unbit/uwsgi
 https://github.com/unbit/uwsgi-docs
@@ -147,29 +146,20 @@ $ ./uwsgi --help | wc -l
 - socket less workers aka [mules](http://uwsgi-docs.readthedocs.org/en/latest/Mules.html)
 - async task [spooler](http://uwsgi-docs.readthedocs.org/en/latest/Spooler.html)
 - [cron-like](http://uwsgi-docs.readthedocs.org/en/latest/Cron.html) interface
-- [caching framework](http://uwsgi-docs.readthedocs.org/en/latest/Caching.html#the-uwsgi-caching-framework)
+- [caching framework](http://uwsgi-docs.readthedocs.org/en/latest/Caching.html#the-uwsgi-caching-framework) and [caching cookbok](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/CachingCookbook.html)
 - [external services management](http://uwsgi-docs.readthedocs.org/en/latest/AttachingDaemons.html#managing-external-daemons-services)
 - [routing system](http://uwsgi-docs.readthedocs.org/en/latest/InternalRouting.html#uwsgi-internal-routing)
-- lot more stuff that doesn't fit here: native http, signals, stats, ...
-
-## Plugins
-
-- reading frames from v4l devices
-- mapping websockets to tcp connections
-- forward postgres notification to uwsgi signals
-- sending metrics to influxdb, datadog, opentsdb, ...
+- [metrics](http://uwsgi-docs.readthedocs.org/en/latest/Metrics.html)
+- lot more stuff that doesn't fit here: native http, signals, rpc, ...
+- lot of [plugins](http://uwsgi-docs.readthedocs.org/en/latest/ThirdPartyPlugins.html)
 
 ## some functionality exposed as APIs
 
-- python, perl, lua
-- ruby dsl
+- [python](http://uwsgi-docs.readthedocs.org/en/latest/PythonDecorators.html), perl, lua
+- [ruby dsl](http://uwsgi-docs.readthedocs.org/en/latest/RubyAPI.html)
 
-- cache
-- queue
-- spooler
-- mules
-- cron
-- timer
+API:
+- cache, queue, spooler, mules, cron, timer, ...
 
 # Fancy architecture
 
