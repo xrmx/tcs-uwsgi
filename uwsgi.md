@@ -275,6 +275,8 @@ https://github.com/xrmx
 
 ## Torino Hacknight
 
-Easiest way to start hacking on free software
+Il modo più facile per iniziare a sviluppare software libero sotto la mole
+
+[Ultimi biglietti!](https://www.eventbrite.com/e/biglietti-torino-hacknight-20142558936)
 
 [@tohacknight](https://twitter.com/tohacknight) - [http://torino.hacknight.it](http://torino.hacknight.it)
