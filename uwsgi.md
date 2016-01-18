@@ -146,7 +146,7 @@ $ ./uwsgi --help | wc -l
 - socket less workers aka [mules](http://uwsgi-docs.readthedocs.org/en/latest/Mules.html)
 - async task [spooler](http://uwsgi-docs.readthedocs.org/en/latest/Spooler.html)
 - [cron-like](http://uwsgi-docs.readthedocs.org/en/latest/Cron.html) interface
-- [caching framework](http://uwsgi-docs.readthedocs.org/en/latest/Caching.html#the-uwsgi-caching-framework) and [caching cookbok](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/CachingCookbook.html)
+- [caching framework](http://uwsgi-docs.readthedocs.org/en/latest/Caching.html#the-uwsgi-caching-framework) and [caching cookbook](http://uwsgi-docs.readthedocs.org/en/latest/tutorials/CachingCookbook.html)
 - [external services management](http://uwsgi-docs.readthedocs.org/en/latest/AttachingDaemons.html#managing-external-daemons-services)
 - [routing system](http://uwsgi-docs.readthedocs.org/en/latest/InternalRouting.html#uwsgi-internal-routing)
 - [metrics](http://uwsgi-docs.readthedocs.org/en/latest/Metrics.html)
